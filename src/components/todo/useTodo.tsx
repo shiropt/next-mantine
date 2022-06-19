@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { mutate } from "swr";
 import { deleteData, postData, putData, useFetch } from "../../hooks/useAsyncData";
-import { useStore as useLoadingStore } from "../../store/loading";
 import { useStore as useUserStore } from "../../store/user";
 import { Todo } from "../../types";
 import { path } from "../../utils/path";
@@ -11,10 +10,8 @@ export const useTodo = () => {
   const { data: todoList, isLoading, error } = useFetch<Todo[]>(path.todo, isSignin);
   const doneTodoList = todoList?.filter((todo) => todo.isDone);
   const stillTodoList = todoList?.filter((todo) => !todo.isDone);
-  const { setLoading } = useLoadingStore();
 
-  const [state, setState] = useState<Todo>({
-    id: 0,
+  const [state, setState] = useState<Omit<Todo, "id">>({
     title: "",
     fixedDate: new Date(),
     isDone: false,
@@ -36,7 +33,7 @@ export const useTodo = () => {
   );
 
   const checkTodo = useCallback(
-    async (id: number) => {
+    async (id: string) => {
       if (!todoList) return;
       const index = todoList.findIndex((todo) => todo.id === id);
       await putData<Todo[]>(path.todo, { ...todoList[index], isDone: !todoList[index].isDone });
@@ -46,7 +43,7 @@ export const useTodo = () => {
   );
 
   const deleteTodo = useCallback(
-    async (id: number) => {
+    async (id: string) => {
       await deleteData<Todo[]>(path.todo, id);
       mutate(path.todo);
     },
@@ -66,14 +63,6 @@ export const useTodo = () => {
     const date = new Date(day);
     return `${date.getMonth() + 1}/${date.getDate()}`;
   };
-
-  useEffect(() => {
-    if (isLoading) {
-      setLoading(true);
-    } else {
-      setLoading(false);
-    }
-  }, [isLoading]);
 
   return {
     todoList,

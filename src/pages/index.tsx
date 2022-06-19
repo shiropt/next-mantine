@@ -3,12 +3,13 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { TodoForm } from "../components/todo/TodoForm";
 import { TodoList } from "../components/todo/TodoList";
-import { HeaderComponent as Header } from "../components/ui/Header";
 import { useStore } from "../store/user";
+import { path } from "../utils/path";
 
 const Home: NextPage = () => {
   const router = useRouter();
   const { isSignin } = useStore();
+
   useEffect(() => {
     if (!isSignin) {
       router.replace("/signin");
@@ -16,7 +17,6 @@ const Home: NextPage = () => {
   }, []);
   return (
     <>
-      <Header />
       <TodoForm />
       <TodoList />
     </>

@@ -1,14 +1,13 @@
 import { Stack, Skeleton, Menu, Text, Button } from "@mantine/core";
 import { FC, useCallback, useEffect } from "react";
-import { useLoading } from "../../hooks/useLoading";
 import { useUser } from "./useUser";
 import { Logout, Settings, User } from "tabler-icons-react";
 import { useStore } from "../../store/user";
 import { useRouter } from "next/router";
 export const UserInfo: FC = () => {
   const router = useRouter();
-  const { user } = useUser();
-  const { isLoading } = useLoading();
+  const { data: user } = useUser();
+  const { isLoading } = useUser();
   const { setSignin } = useStore();
   const signOut = useCallback(() => {
     setSignin(false);

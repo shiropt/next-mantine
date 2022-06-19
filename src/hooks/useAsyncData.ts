@@ -23,7 +23,7 @@ export const putData = async <T>(url: string, params: unknown) => {
   return await getResponse<T>(() => axios.put<T>(url, params));
 };
 
-export const deleteData = async <T>(url: string, id: number) => {
+export const deleteData = async <T>(url: string, id: string) => {
   return await getResponse<T>(() => axios.delete<T>(url, { data: { id } }));
 };
 

@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { Container, Title, Button, Divider, Text } from "@mantine/core";
-import { BrandGoogle, BrandGooglePlay, Mail } from "tabler-icons-react";
+import { BrandGoogle, Mail } from "tabler-icons-react";
 import { useRouter } from "next/router";
 
 const Signin: NextPage = () => {
@@ -21,13 +21,7 @@ const Signin: NextPage = () => {
       >
         メールアドレスでログイン
       </Button>
-      <Button
-        fullWidth
-        size="lg"
-        leftIcon={<BrandGoogle />}
-        variant="outline"
-        color="gray"
-      >
+      <Button fullWidth size="lg" leftIcon={<BrandGoogle />} variant="outline" color="gray">
         Googleでログイン
       </Button>
       <Divider my="sm" className="my-10" />

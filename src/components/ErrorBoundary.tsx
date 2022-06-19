@@ -1,4 +1,4 @@
-import { Container, Stack, Text } from "@mantine/core";
+import { Stack, Text } from "@mantine/core";
 import { FallbackProps } from "react-error-boundary";
 
 export const ErrorFallback = ({ error, resetErrorBoundary }: FallbackProps) => {

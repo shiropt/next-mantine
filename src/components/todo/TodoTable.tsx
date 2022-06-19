@@ -1,16 +1,15 @@
 import { Skeleton, Table } from "@mantine/core";
 import { FC } from "react";
 import { Square, Checkbox, Trash, AlertTriangle } from "tabler-icons-react";
-import { useLoading } from "../../hooks/useLoading";
 import { Todo } from "../../types";
 import { useTodo } from "./useTodo";
 
 type Props = {
-  todoList: Todo[];
+  todoList?: Todo[];
 };
 
 export const TodoTable: FC<Props> = ({ todoList }) => {
-  const { isLoading } = useLoading();
+  const { isLoading } = useTodo();
   const { checkTodo, deleteTodo, importanceStyle, createDate } = useTodo();
 
   return (

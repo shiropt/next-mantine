@@ -8,9 +8,11 @@ export const TodoList: FC = () => {
 
   return (
     <Tabs>
-      <Tabs.Tab label="全て">{todoList && <TodoTable todoList={todoList} />}</Tabs.Tab>
-      <Tabs.Tab label="未完了">{stillTodoList && <TodoTable todoList={stillTodoList} />}</Tabs.Tab>
-      <Tabs.Tab label="完了済み">{doneTodoList && <TodoTable todoList={doneTodoList} />}</Tabs.Tab>
+      <Tabs.Tab className=" px-10" label="全て">
+        <TodoTable todoList={todoList} />
+      </Tabs.Tab>
+      <Tabs.Tab label="未完了">{<TodoTable todoList={stillTodoList} />}</Tabs.Tab>
+      <Tabs.Tab label="完了済み">{<TodoTable todoList={doneTodoList} />}</Tabs.Tab>
     </Tabs>
   );
 };
