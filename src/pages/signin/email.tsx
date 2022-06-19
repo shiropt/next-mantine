@@ -2,15 +2,14 @@ import type { NextPage } from "next";
 import { Container, Title, Anchor } from "@mantine/core";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
-import { User } from "../../types";
-import { AuthForm } from "../../components/user/AuthForm";
+import { AuthForm } from "../../components/user/AuthForm/AuthForm";
 import { useStore } from "../../store/user";
 
 const EmailSignin: NextPage = () => {
   const router = useRouter();
 
   const { setSignin } = useStore();
-  const signin = useCallback((values: Pick<User, "email" | "password">) => {
+  const signin = useCallback(() => {
     setSignin(true);
     router.push("/");
   }, []);

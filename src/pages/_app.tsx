@@ -3,7 +3,7 @@ import type { AppProps } from "next/app";
 import { LoadingOverlay, MantineProvider } from "@mantine/core";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorFallback } from "../components/ErrorBoundary";
-import { HeaderComponent as Header } from "../components/ui/Header";
+import { Header } from "../components/ui/Header";
 import { useUser } from "../components/user/useUser";
 
 if (process.env.NODE_ENV === "development") {

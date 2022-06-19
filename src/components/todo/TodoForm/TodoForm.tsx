@@ -2,7 +2,7 @@ import { Button, Group, Select, TextInput, Box } from "@mantine/core";
 import { DatePicker } from "@mantine/dates";
 import { Calendar } from "tabler-icons-react";
 import type { FC } from "react";
-import { useTodo } from "./useTodo";
+import { useTodo } from "../useTodo";
 
 export const TodoForm: FC = () => {
   const { state, updateValue, addTodo } = useTodo();

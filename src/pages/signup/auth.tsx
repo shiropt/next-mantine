@@ -4,7 +4,7 @@ import { Container, Title } from "@mantine/core";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
 import { User } from "../../types";
-import { AuthForm } from "../../components/user/AuthForm";
+import { AuthForm } from "../../components/user/AuthForm/AuthForm";
 
 const SmsAuth: NextPage = () => {
   const router = useRouter();

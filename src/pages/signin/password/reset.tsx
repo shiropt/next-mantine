@@ -12,7 +12,7 @@ import {
 import { useRouter } from "next/router";
 import { useCallback } from "react";
 import { useToggle } from "@mantine/hooks";
-import { AuthForm } from "../../../components/user/AuthForm";
+import { AuthForm } from "../../../components/user/AuthForm/AuthForm";
 import { User } from "../../../types";
 
 const PasswordReset: NextPage = () => {

@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Stack, Skeleton, Menu, Text, Button } from "@mantine/core";
-import { FC, useCallback, useEffect } from "react";
-import { useUser } from "./useUser";
-import { Logout, Settings, User } from "tabler-icons-react";
-import { useStore } from "../../store/user";
+import { Stack, Skeleton, Menu, Text } from "@mantine/core";
+import { FC, useCallback } from "react";
+import { Logout, User } from "tabler-icons-react";
 import { useRouter } from "next/router";
+import { useUser } from "../useUser";
+import { useStore } from "../../../store/user";
 export const UserInfo: FC = () => {
   const router = useRouter();
   const { data: user } = useUser();

@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { useCallback, useState } from "react";
 import { useToggle } from "@mantine/hooks";
 import { User } from "../../types";
-import { AuthForm } from "../../components/user/AuthForm";
+import { AuthForm } from "../../components/user/AuthForm/AuthForm";
 
 const EmailSignup: NextPage = () => {
   const router = useRouter();

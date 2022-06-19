@@ -7,10 +7,9 @@ import {
 } from "@mantine/core";
 import { FC } from "react";
 import { useForm } from "@mantine/form";
-import { User } from "../../types";
 
 type Props = {
-  submit: (values: User) => void;
+  submit: () => void;
   kind: "signin" | "signup" | "auth" | "reset";
 };
 

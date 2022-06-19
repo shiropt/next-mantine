@@ -1,8 +1,8 @@
 import { Skeleton, Table } from "@mantine/core";
 import { FC } from "react";
-import { Square, Checkbox, Trash, AlertTriangle } from "tabler-icons-react";
-import { Todo } from "../../types";
-import { useTodo } from "./useTodo";
+import { Square, Checkbox, Trash } from "tabler-icons-react";
+import { Todo } from "../../../types";
+import { useTodo } from "../useTodo";
 
 type Props = {
   todoList?: Todo[];

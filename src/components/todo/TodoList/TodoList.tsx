@@ -1,7 +1,7 @@
 import { Tabs } from "@mantine/core";
 import { FC } from "react";
-import { TodoTable } from "./TodoTable";
-import { useTodo } from "./useTodo";
+import { TodoTable } from "../TodoTable";
+import { useTodo } from "../useTodo";
 
 export const TodoList: FC = () => {
   const { todoList, doneTodoList, stillTodoList } = useTodo();
