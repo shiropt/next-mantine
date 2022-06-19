@@ -18,7 +18,8 @@
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
       "eslint --fix",
-      "npx prettier --write ."
+      "npx prettier --write .",
+      "npx tsc --noEmit "
     ]
   },
   "dependencies": {

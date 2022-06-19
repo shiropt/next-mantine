@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { mutate } from "swr";
 import {
   deleteData,
