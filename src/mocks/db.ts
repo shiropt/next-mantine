@@ -14,4 +14,10 @@ export const db = factory({
   },
 });
 db.user.create({ id: "1", name: "shiro" });
-db.todo.create({ id: "1", title: "トレーニング", fixedDate: new Date(), isDone: false, importance: "高" });
+db.todo.create({
+  id: "1",
+  title: "トレーニング",
+  fixedDate: new Date(),
+  isDone: false,
+  importance: "高",
+});

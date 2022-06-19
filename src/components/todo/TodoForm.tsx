@@ -13,7 +13,9 @@ export const TodoForm: FC = () => {
           id="text-input"
           placeholder="Todo"
           value={state.title}
-          onChange={(event) => updateValue({ title: event.currentTarget.value })}
+          onChange={(event) =>
+            updateValue({ title: event.currentTarget.value })
+          }
         />
         <DatePicker
           id="date-picker"

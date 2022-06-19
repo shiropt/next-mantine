@@ -21,7 +21,10 @@ const EmailSignin: NextPage = () => {
         ログイン
       </Title>
       <AuthForm submit={signin} kind="signin" />
-      <Anchor onClick={() => router.push("/signin/password/reset")} className=" p-6 float-right">
+      <Anchor
+        onClick={() => router.push("/signin/password/reset")}
+        className=" p-6 float-right"
+      >
         パスワードを忘れた方はこちら &gt;
       </Anchor>
     </Container>

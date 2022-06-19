@@ -5,6 +5,9 @@ export type User = {
   name: string;
 };
 
-export default function handler(req: NextApiRequest, res: NextApiResponse<User>) {
+export default function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<User>
+) {
   res.status(200).json({ name: "John Doe" });
 }

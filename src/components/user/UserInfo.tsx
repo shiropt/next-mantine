@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Stack, Skeleton, Menu, Text, Button } from "@mantine/core";
 import { FC, useCallback, useEffect } from "react";
 import { useUser } from "./useUser";

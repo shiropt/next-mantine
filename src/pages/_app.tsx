@@ -13,7 +13,11 @@ if (process.env.NODE_ENV === "development") {
 function MyApp({ Component, pageProps }: AppProps) {
   const { isLoading } = useUser();
   return (
-    <MantineProvider withGlobalStyles withNormalizeCSS emotionOptions={{ key: "mantine", prepend: false }}>
+    <MantineProvider
+      withGlobalStyles
+      withNormalizeCSS
+      emotionOptions={{ key: "mantine", prepend: false }}
+    >
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <LoadingOverlay visible={isLoading} />
         <Header />

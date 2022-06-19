@@ -1,6 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import type { NextPage } from "next";
-import { Container, Title, Button, Input, InputWrapper, Modal, Text } from "@mantine/core";
+import {
+  Container,
+  Title,
+  Button,
+  Input,
+  InputWrapper,
+  Modal,
+  Text,
+} from "@mantine/core";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
 import { useToggle } from "@mantine/hooks";

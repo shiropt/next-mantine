@@ -16,11 +16,14 @@ const EmailSignup: NextPage = () => {
     router.push("/signup/auth");
   }, [isModalOpen]);
 
-  const confirm = useCallback((values: Pick<User, "email" | "password" | "name" | "phone">) => {
-    if (!values.phone) return;
-    setPhone(values.phone);
-    toggleModal();
-  }, []);
+  const confirm = useCallback(
+    (values: Pick<User, "email" | "password" | "name" | "phone">) => {
+      if (!values.phone) return;
+      setPhone(values.phone);
+      toggleModal();
+    },
+    []
+  );
 
   return (
     <Container size="sm" py="100px">
@@ -47,7 +50,12 @@ const EmailSignup: NextPage = () => {
           <Button color="red" fullWidth onClick={sendAuthNumber}>
             OK
           </Button>
-          <Button variant="white" color="red" fullWidth onClick={() => toggleModal()}>
+          <Button
+            variant="white"
+            color="red"
+            fullWidth
+            onClick={() => toggleModal()}
+          >
             キャンセル
           </Button>
         </Container>

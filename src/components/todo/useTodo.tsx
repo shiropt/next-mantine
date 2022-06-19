@@ -1,13 +1,23 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useCallback, useEffect, useState } from "react";
 import { mutate } from "swr";
-import { deleteData, postData, putData, useFetch } from "../../hooks/useAsyncData";
+import {
+  deleteData,
+  postData,
+  putData,
+  useFetch,
+} from "../../hooks/useAsyncData";
 import { useStore as useUserStore } from "../../store/user";
 import { Todo } from "../../types";
 import { path } from "../../utils/path";
 
 export const useTodo = () => {
   const { isSignin } = useUserStore();
-  const { data: todoList, isLoading, error } = useFetch<Todo[]>(path.todo, isSignin);
+  const {
+    data: todoList,
+    isLoading,
+    error,
+  } = useFetch<Todo[]>(path.todo, isSignin);
   const doneTodoList = todoList?.filter((todo) => todo.isDone);
   const stillTodoList = todoList?.filter((todo) => !todo.isDone);
 
@@ -36,7 +46,10 @@ export const useTodo = () => {
     async (id: string) => {
       if (!todoList) return;
       const index = todoList.findIndex((todo) => todo.id === id);
-      await putData<Todo[]>(path.todo, { ...todoList[index], isDone: !todoList[index].isDone });
+      await putData<Todo[]>(path.todo, {
+        ...todoList[index],
+        isDone: !todoList[index].isDone,
+      });
       mutate(path.todo);
     },
     [todoList]

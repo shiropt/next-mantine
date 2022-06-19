@@ -38,7 +38,10 @@ export const TodoTable: FC<Props> = ({ todoList }) => {
           {todoList &&
             todoList.map((todo, i) => (
               <tr key={i} className={todo.isDone ? "bg-slate-100" : ""}>
-                <td className=" w-24 cursor-pointer" onClick={() => checkTodo(todo.id)}>
+                <td
+                  className=" w-24 cursor-pointer"
+                  onClick={() => checkTodo(todo.id)}
+                >
                   {todo.isDone ? (
                     <Checkbox size={32} strokeWidth={1.5} color={"#79d287"} />
                   ) : (
@@ -50,11 +53,19 @@ export const TodoTable: FC<Props> = ({ todoList }) => {
                   <p>{createDate(todo.fixedDate)}</p>
                 </td>
                 <td>
-                  <p className={importanceStyle(todo.importance) + " rounded-full w-1/4 h-8 text-center  pt-1"}>
+                  <p
+                    className={
+                      importanceStyle(todo.importance) +
+                      " rounded-full w-1/4 h-8 text-center  pt-1"
+                    }
+                  >
                     {todo.importance}
                   </p>
                 </td>
-                <td className="cursor-pointer" onClick={() => deleteTodo(todo.id)}>
+                <td
+                  className="cursor-pointer"
+                  onClick={() => deleteTodo(todo.id)}
+                >
                   <Trash size={32} strokeWidth={0.5} color={"#f4020e"} />
                 </td>
               </tr>

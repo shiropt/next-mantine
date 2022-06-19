@@ -1,4 +1,10 @@
-import { InputWrapper, PasswordInput, TextInput, NumberInput, Button } from "@mantine/core";
+import {
+  InputWrapper,
+  PasswordInput,
+  TextInput,
+  NumberInput,
+  Button,
+} from "@mantine/core";
 import { FC } from "react";
 import { useForm } from "@mantine/form";
 import { User } from "../../types";
@@ -32,7 +38,12 @@ export const AuthForm: FC<Props> = (props) => {
           <TextInput {...form.getInputProps("name")} size="lg" />
         </InputWrapper>
         <InputWrapper label="電話番号">
-          <NumberInput noClampOnBlur hideControls={true} {...form.getInputProps("phone")} size="lg" />
+          <NumberInput
+            noClampOnBlur
+            hideControls={true}
+            {...form.getInputProps("phone")}
+            size="lg"
+          />
         </InputWrapper>
         <Button type="submit" fullWidth size="lg" color="red" className="mt-12">
           次へ
@@ -59,7 +70,11 @@ export const AuthForm: FC<Props> = (props) => {
     return (
       <form onSubmit={form.onSubmit(props.submit)}>
         <InputWrapper label="認証番号">
-          <NumberInput hideControls={true} {...form.getInputProps("authNumber")} size="lg" />
+          <NumberInput
+            hideControls={true}
+            {...form.getInputProps("authNumber")}
+            size="lg"
+          />
         </InputWrapper>
         <Button type="submit" fullWidth size="lg" color="red" className="mt-12">
           認証して完了する
