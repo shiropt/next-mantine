@@ -30,7 +30,7 @@ const EmailSignup: NextPage = () => {
       <Title order={3} className="text-center">
         会員登録
       </Title>
-      <AuthForm kind="signup" submit={confirm} />
+      <AuthForm kind="signup" submit={() => {}} />
       <Modal
         classNames={{ title: "font-bold", header: "pt-2 flex justify-center" }}
         title={phone}

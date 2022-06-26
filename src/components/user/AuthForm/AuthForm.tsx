@@ -28,13 +28,21 @@ export const AuthForm: FC<Props> = (props) => {
     return (
       <form onSubmit={form.onSubmit(props.submit)}>
         <InputWrapper label="メールアドレス">
-          <TextInput {...form.getInputProps("email")} size="lg" />
+          <TextInput
+            placeholder="メールアドレス"
+            {...form.getInputProps("email")}
+            size="lg"
+          />
         </InputWrapper>
         <InputWrapper className="my-4" id="input-demo" label="パスワード">
           <PasswordInput {...form.getInputProps("password")} size="lg" />
         </InputWrapper>
         <InputWrapper label="ニックネーム">
-          <TextInput {...form.getInputProps("name")} size="lg" />
+          <TextInput
+            placeholder="ニックネーム"
+            {...form.getInputProps("name")}
+            size="lg"
+          />
         </InputWrapper>
         <InputWrapper label="電話番号">
           <NumberInput

@@ -1,14 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import type { NextPage } from "next";
-import {
-  Container,
-  Title,
-  Button,
-  Input,
-  InputWrapper,
-  Modal,
-  Text,
-} from "@mantine/core";
+import { Container, Title, Button, Modal, Text } from "@mantine/core";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
 import { useToggle } from "@mantine/hooks";
@@ -18,13 +10,10 @@ import { User } from "../../../types";
 const PasswordReset: NextPage = () => {
   const router = useRouter();
   const [isModalOpen, toggleModal] = useToggle(false, [true, false]);
-  const resetPassword = useCallback(
-    (values: Pick<User, "email">) => {
-      // Todo: password reset API
-      toggleModal();
-    },
-    [isModalOpen]
-  );
+  const resetPassword = useCallback(() => {
+    // Todo: password reset API
+    toggleModal();
+  }, [isModalOpen]);
 
   return (
     <Container size="sm" py="100px" className="">

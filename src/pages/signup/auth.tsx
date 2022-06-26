@@ -8,7 +8,7 @@ import { AuthForm } from "../../components/user/AuthForm/AuthForm";
 
 const SmsAuth: NextPage = () => {
   const router = useRouter();
-  const signin = useCallback((values: Pick<User, "password">) => {
+  const signin = useCallback(() => {
     // setUserInfo({ id: 1, name: "shiro", isSignIn: true });
     router.push("/");
   }, []);

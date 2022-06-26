@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderコンポーネントSnapShotテスト  1`] = `
+<DocumentFragment>
+  <nav
+    class="mantine-Header-root mantine-r0ho0p"
+    data-testid="email"
+  />
+</DocumentFragment>
+`;
+
+exports[`Headerコンポーネントのテスト  1`] = `
+<DocumentFragment>
+  <nav
+    class="mantine-Header-root mantine-r0ho0p"
+    data-testid="email"
+  />
+</DocumentFragment>
+`;
